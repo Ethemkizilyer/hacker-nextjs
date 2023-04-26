@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
-
+import Story from './story'
+import styles from "../styles/stories.module.scss"
 const Stories = ({
     page=1,
     stories,
@@ -12,21 +13,29 @@ const Stories = ({
     <div>
         {stories && stories.map((story,i)=>{
             return (
-                <div className="item" key={story.id}>
+                <div className={styles.item} key={story.id}>
                     {
                         offset !== null ? (
                             <>
-                            <span className='count'>
+                            <span className={styles.count}>
                                 {offset + i + 1}
                             </span>
                             </>
                         ):null
                     }
-                    {/* <Story/> */}
+                    <Story
+                    id={story.id}
+                    title={story.title}
+                    date={story.date}
+                    url={story.url}
+                    user={story.user}
+                    score={story.score}
+                    commentsCount={story.comments.length}
+                    />
                 </div>
             )
         })}
-        <footer>
+        <footer className={styles.footer}>
             {showMoreButton && (
                 <Link href={`/${morePath}/${page+1}`}>
                     <a>More</a>

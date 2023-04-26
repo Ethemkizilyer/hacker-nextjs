@@ -1,0 +1,16 @@
+.item{
+    display: flex;
+    margin: 10px 0;
+    .count {
+        flex-basis: auto;
+        // vertical-align: top;
+        font-size: 14px;
+        margin-right: 5px;
+        display: block;
+        width: 20px;
+
+        ::after{
+            content: ".";
+        }
+    }
+}
