@@ -1,4 +1,5 @@
 
+import getStories from "@/lib/get-stories";
 import Page from "../../components/page";
 
 export function getStaticPaths() {
@@ -30,9 +31,13 @@ export async function getStaticProps({ params: { page = 1 } }) {
 }
 
 const NewsList = ({ page, stories }) => {
+
+  const offset=(page - 1) * 30
   return (
     <div>
-      <Page>sTORİES</Page>
+      <Page>
+        
+      </Page>
     </div>
   );
 };
