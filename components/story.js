@@ -22,7 +22,7 @@ const Story = ({
         )}
         {url && (
           <span className={styles.source}>
-            <a href={`http://${host}`}>{host.name.replace(/^www\./, "")}</a>
+            <a href={`http://${host}`}>{host.replace(/^www\./, "")}</a>
           </span>
         )}
       </div>

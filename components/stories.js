@@ -37,7 +37,7 @@ const Stories = ({
         })}
         <footer className={styles.footer}>
             {showMoreButton && (
-                <Link href={`/${morePath}/${page+1}`}>
+                <Link href={`/${morePath}/${page+1}`} legacyBehavior>
                     <a>More</a>
                 </Link>
             )}

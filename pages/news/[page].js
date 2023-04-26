@@ -1,6 +1,7 @@
 
 import getStories from "@/lib/get-stories";
 import Page from "../../components/page";
+import Stories from "@/components/stories";
 
 export function getStaticPaths() {
   return {
@@ -36,7 +37,12 @@ const NewsList = ({ page, stories }) => {
   return (
     <div>
       <Page>
-        
+        <Stories 
+        stories={stories}
+        page={page}
+        offset={offset}
+        showMoreButton
+        />
       </Page>
     </div>
   );
